@@ -4,7 +4,7 @@
     "ScheduledForDeletion": false,
     "InstalledFromUrl": "",
     "WorkingPluginId": "",
-    "IsThirdParty": true,
+    "IsThirdParty": false,
     "EffectiveVersion": "1.1.2.0",
     "Author": "Raiden",
     "Name": "DcNotify",
