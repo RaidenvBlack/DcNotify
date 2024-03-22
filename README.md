@@ -11,11 +11,13 @@ Credit to [@lostkagamine](https://github.com/lostkagamine/) for the original ide
 1. Go to your Text Channel where you want to receive notifications.
 2. Go to settings and click on `Integrations`.
 3. Click on `Create Webhook`.
-4. Copy the Webhook URL
+4. Copy the `Webhook URL`.
 
 ### In Game
 Configure the plugin in game using `/dcn` command.  
-  - Enter the ***Webhook Url*** you copied before. 
+  - Enter the ***Webhook Url*** you copied before.
   - Can toggle the following options.
       - Send messages for duty pop
       - Ignore AFK status and always notify
+
+***Don't forget to click on save and close after you are done.***
