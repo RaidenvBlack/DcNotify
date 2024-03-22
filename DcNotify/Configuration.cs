@@ -11,6 +11,8 @@ namespace Dnc
 
         public bool EnableForDutyPops { get; set; } = true;
         public bool IgnoreAfkStatus { get; set; } = false;
+        
+        public bool Enabled { get; set; } = true;
 
         // Optional: Specify the ntfy topic if needed
         public string DcHook { get; set; } = "";

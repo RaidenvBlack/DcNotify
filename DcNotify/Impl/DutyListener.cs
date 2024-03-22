@@ -27,6 +27,8 @@ public class DutyListener
         if (!CharacterUtil.IsClientAfk())
             return;
         
+        if (!Plugin.Configuration.Enabled) return;
+        
         var dutyName = e.RowId == 0 ? "Duty Roulette" : e.Name.ToDalamudString().TextValue;
         DncDelivery.Deliver($"Duty pop", $"Duty registered: '{dutyName}'.");
     }

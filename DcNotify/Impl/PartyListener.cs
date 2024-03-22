@@ -26,6 +26,7 @@ public static class PartyListener
     private static void OnJoin(CrossWorldPartyListSystem.CrossWorldMember m)
     {
         if (!CharacterUtil.IsClientAfk()) return;
+        if (!Plugin.Configuration.Enabled) return;
 
         var jobAbbr = LuminaDataUtil.GetJobAbbreviation(m.JobId);
 
@@ -44,6 +45,7 @@ public static class PartyListener
     private static void OnLeave(CrossWorldPartyListSystem.CrossWorldMember m)
     {
         if (!CharacterUtil.IsClientAfk()) return;
+        if (!Plugin.Configuration.Enabled) return;
         
         var jobAbbr = LuminaDataUtil.GetJobAbbreviation(m.JobId);
 

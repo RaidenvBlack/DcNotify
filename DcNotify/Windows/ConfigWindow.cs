@@ -27,6 +27,13 @@ public class ConfigWindow : Window, IDisposable
     public override void Draw()
     {
         {
+            var cfg = Configuration.Enabled;
+            if (ImGui.Checkbox("Enable/Disable Plugin", ref cfg))
+            {
+                Configuration.Enabled = cfg;
+            }
+        }
+        {
             var cfg = Configuration.DcHook;
             if (ImGui.InputText("Webook Url", ref cfg, 2048u))
             {

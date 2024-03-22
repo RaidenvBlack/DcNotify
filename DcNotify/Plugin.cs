@@ -14,7 +14,6 @@ namespace Dnc
     {
         public string Name => "DcN";
         private const string CommandName = "/dcn";
-
         private DalamudPluginInterface PluginInterface { get; init; }
         private ICommandManager CommandManager { get; init; }
         
@@ -45,7 +44,7 @@ namespace Dnc
 
             this.CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
             {
-                HelpMessage = "Opens the configuration window."
+                HelpMessage = "Opens settings\n'on' enables the plugin\n'off' disables the plugin."
             });
 
             this.PluginInterface.UiBuilder.Draw += DrawUI;
@@ -55,6 +54,7 @@ namespace Dnc
             PartyListener.On();
             DutyListener.On();
         }
+        
 
         public void Dispose()
         {
@@ -71,13 +71,21 @@ namespace Dnc
 
         private void OnCommand(string command, string args)
         {
-            if (args == "debugOnlineStatus")
-            {
-                Service.ChatGui.Print($"OnlineStatus ID = {Service.ClientState.LocalPlayer!.OnlineStatus.Id}");
-                return;
-            }
             
-            ConfigWindow.IsOpen = true;
+            switch (args.Trim())
+            {
+                case "on":
+                    Configuration.Enabled = true;
+                    Service.ChatGui.Print($"DcN plugin enabled.");
+                    break;
+                case "off":
+                    Configuration.Enabled = false;
+                    Service.ChatGui.Print($"DcN plugin disabled.");
+                    break;
+                case "":
+                    ConfigWindow.IsOpen = true;
+                    break;
+            }
         }
 
         private void DrawUI()
