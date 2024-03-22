@@ -7,7 +7,7 @@ Credit to [@lostkagamine](https://github.com/lostkagamine/) for the original ide
 
 ## Usage
 
-### Phone Setup
+### Discord Setup
 1. Go to your Text Channel where you want to receive notifications.
 2. Go to settings and click on `Integrations`.
 3. Click on `Create Webhook`.
