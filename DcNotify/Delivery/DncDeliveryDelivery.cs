@@ -20,7 +20,18 @@ public static class DncDelivery
         // Constructing the payload for Discord webhook
         var payload = new
         {
-            content = title + " " + text
+            username = "DcN",
+            avatar_url= "https://i.imgur.com/wAhXLxp.png",
+            embeds = new[]
+            {
+                new
+                {
+                    title = title,
+                    description = text,
+                    color = 16711680 // You can change the color here (e.g., 16711680 is red)
+                }
+            }
+            //content = title + " " + text
         };
 
         try
