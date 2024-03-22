@@ -44,7 +44,7 @@ namespace Dnc
 
             this.CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
             {
-                HelpMessage = "Opens settings\n'on' enables the plugin\n'off' disables the plugin."
+                HelpMessage = "Opens settings\n't' toggles whether it's enabled.\n'on' enables the plugin\n'off' disables the plugin."
             });
 
             this.PluginInterface.UiBuilder.Draw += DrawUI;
@@ -74,6 +74,10 @@ namespace Dnc
             
             switch (args.Trim())
             {
+                case "t" or "toggle":
+                    Configuration.Enabled = !Configuration.Enabled;
+                    Service.ChatGui.Print($"DcN plugin {(Configuration.Enabled ? "enabled" : "disabled")}.");
+                    break;
                 case "on":
                     Configuration.Enabled = true;
                     Service.ChatGui.Print($"DcN plugin enabled.");
